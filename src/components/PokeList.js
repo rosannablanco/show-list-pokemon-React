@@ -4,7 +4,7 @@ import '../stylesheets/PokeList.scss';
 
 function PokeList(props) {
   const listItems = props.data.Datas.map((items, index) => {
-    return <Pokemon item={items} key={index} />;
+    return <Pokemon item={items} key={index} addFavorite={props.addFavorite} />;
   });
 
   return <ul className="card-list">{listItems}</ul>;

@@ -11,18 +11,35 @@ class App extends React.Component {
     this.state = {
       pokemons: {Datas},
     };
+    this.classFavorite = this.classFavorite.bind(this);
+  }
+
+  classFavorite(element) {
+    const elementId = parseInt(element.id);
+    const {pokemons} = this.state;
+    const pokemonFav = pokemons.Datas.findIndex((itemfav) => itemfav.id === elementId);
+    if (pokemons.Datas[pokemonFav].isFavorite === true) {
+      pokemons.Datas[pokemonFav].isFavorite = false;
+    } else {
+      pokemons.Datas[pokemonFav].isFavorite = true;
+    }
+    this.setState({
+      pokemons: pokemons,
+    });
   }
 
   render() {
+    const {pokemons} = this.state;
     return (
       <div className="App">
         <h2>Mi lista de pokemon</h2>
-        <PokeList data={this.state.pokemons} />
+        <PokeList data={pokemons} addFavorite={this.classFavorite} />
       </div>
     );
   }
 }
 App.propTypes = {
   pokemons: PropTypes.arrayOf(PropTypes.object),
+  isFavorite: PropTypes.bool,
 };
 export default App;
