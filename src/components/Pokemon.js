@@ -2,7 +2,6 @@ import React from 'react';
 import '../stylesheets/Pokemon.scss';
 
 function Pokemon(props) {
-  /* console.log(props.item.types); */
   const type = props.item.types.map((types, index) => {
     return (
       <span className="card-tag" key={index}>
