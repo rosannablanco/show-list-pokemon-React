@@ -1,6 +1,7 @@
 import React from 'react';
 import PokeList from './PokeList';
 import Datas from '../data/data.json';
+import PropTypes from 'prop-types';
 
 import '../stylesheets/App.scss';
 
@@ -21,5 +22,7 @@ class App extends React.Component {
     );
   }
 }
-
+App.propTypes = {
+  pokemons: PropTypes.arrayOf(PropTypes.object),
+};
 export default App;
