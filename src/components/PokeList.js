@@ -3,8 +3,8 @@ import Pokemon from './Pokemon';
 import '../stylesheets/PokeList.scss';
 
 function PokeList(props) {
-  console.log(props);
-  const listItems = props.data.map((items, index) => {
+  console.log(props.data);
+  const listItems = props.data.Datas.map((items, index) => {
     return <Pokemon item={items} key={index} />;
   });
 
