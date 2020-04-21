@@ -11,10 +11,10 @@ class App extends React.Component {
     this.state = {
       pokemons: {list},
     };
-    this.classFavorite = this.classFavorite.bind(this);
+    this.getFavorite = this.getFavorite.bind(this);
   }
 
-  classFavorite(element) {
+  getFavorite(element) {
     const elementId = parseInt(element.id);
     const {pokemons} = this.state;
     const pokemonFav = pokemons.list.findIndex((itemfav) => itemfav.id === elementId);
@@ -33,7 +33,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h2>Mi lista de pokemon</h2>
-        <PokeList data={pokemons} addFavorite={this.classFavorite} />
+        <PokeList data={pokemons} addFavorite={this.getFavorite} />
       </div>
     );
   }
