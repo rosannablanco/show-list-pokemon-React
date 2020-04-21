@@ -3,14 +3,23 @@
   padding: 5px;
   margin: 5px;
   border-radius: 5px;
+  cursor: pointer;
+  transition: border ease 1s, background-color ease;
+
   &-tag {
     background-color: rgb(209, 216, 113);
     padding: 5px;
     margin-left: 5px;
-    margin-bottom: 50px;
     border-radius: 5px;
   }
   &-title {
     margin-bottom: 10px;
   }
+  &-type {
+    margin-bottom: 5px;
+  }
+}
+.favorite {
+  background-color: rgb(247, 190, 115);
+  border: 2px solid rgb(250, 143, 4);
 }
