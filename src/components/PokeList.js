@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Pokemon from './Pokemon';
 import '../stylesheets/PokeList.scss';
 
@@ -9,5 +10,8 @@ function PokeList(props) {
 
   return <ul className="card-list">{listItems}</ul>;
 }
+PokeList.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object),
+};
 
 export default PokeList;
